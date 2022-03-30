@@ -43,8 +43,8 @@ def main():
     with col2:
         size2 = st.number_input("サイズ(横幅)",step=0.1,value=1.0)
     
-    if st.checkbox('新規ロット番号'):
-        lot_num = st.text_input()
+    if st.checkbox('新規ロット'):
+        lot_num = st.text_input("ロット番号")
         if hankaku(lot_num): st.error('ロット番号は半角で入力してください')
     else:
         st.selectbox('ロット番号',('T-442251-1-3','T-642584-2-3'))
