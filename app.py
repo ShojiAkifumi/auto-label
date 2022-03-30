@@ -39,9 +39,9 @@ def main():
     
     col1, col2 = st.columns(2)
     with col1:
-        size1 = st.number_input("サイズ(縦幅)",step=0.1,value=1.0)
+        size1 = st.number_input("サイズ(縦)",step=0.1,value=1.0)
     with col2:
-        size2 = st.number_input("サイズ(横幅)",step=0.1,value=1.0)
+        size2 = st.number_input("サイズ(横)",step=0.1,value=1.0)
     
     if st.checkbox('新規ロット'):
         lot_num = st.text_input("ロット番号", placeholder="ロット番号を入力してください")
