@@ -47,7 +47,7 @@ def main():
         lot_num = st.text_input("ロット番号", placeholder="ロット番号を入力してください")
         if hankaku(lot_num): st.error('ロット番号は半角で入力してください')
     else:
-        st.selectbox('ロット番号',('T-442251-1-3','T-642584-2-3'))
+        lot_num = st.selectbox('ロット番号',('T-442251-1-3','T-642584-2-3'))
 
     col1, col2 = st.columns(2)
     with col1:
