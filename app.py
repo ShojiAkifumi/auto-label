@@ -32,7 +32,7 @@ def drawText(draw,text,left,top,width,height):
 
 def main():
 
-    name = st.text_input("品名", placeholder="2XC", value="test")
+    name = st.text_input("品名", placeholder="2XC", value="2XC")
     if hankaku(name): st.error('品名は半角で入力してください')
 
     weight = st.number_input("正味質量(kg)",value=1.00)
@@ -43,16 +43,16 @@ def main():
     with col2:
         size2 = st.number_input("サイズ(横幅)",step=0.1,value=1.0)
     
-    lot_num = st.text_input("ロット番号", placeholder='T-442251-1-3', value="test")
+    lot_num = st.text_input("ロット番号", placeholder='T-442251-1-3', value="T-442251-1-3")
     if hankaku(lot_num): st.error('ロット番号は半角で入力してください')
 
     col1, col2 = st.columns(2)
     with col1:
-        plant = st.text_input("製造工場", placeholder="刈谷工場", value="test")
+        plant = st.text_input("製造工場", placeholder="刈谷工場", value="刈谷工場")
     with col2:
-        line = st.text_input("製造ライン", placeholder="製造ライン B", value="test")
+        line = st.text_input("製造ライン", placeholder="製造ライン B", value="製造ライン B")
 
-    member = st.text_input("検査員", placeholder="製造部 〇〇", value="test")
+    member = st.text_input("検査員", placeholder="製造部 〇〇", value="製造部 山下")
     col1, col2 = st.columns(2)
     with col1:
         test_date = st.date_input("検査日")
