@@ -13,13 +13,6 @@ def hankaku(text):
             flg = 1
     return flg
 
-def selectLot(flg_lot):
-        if flg_lot:
-            lot_num = st.text_input("ロット番号")
-            if hankaku(lot_num): st.error('ロット番号は半角で入力してください')
-        else:
-            st.selectbox('ロット番号',('T-442251-1-3','T-642584-2-3'))
-
 def drawText(draw,text,left,top,width,height):
 
     out_text_size = (width + 1, height + 1)
@@ -49,8 +42,15 @@ def main():
         size1 = st.number_input("サイズ(縦幅)",step=0.1,value=1.0)
     with col2:
         size2 = st.number_input("サイズ(横幅)",step=0.1,value=1.0)
+    
+    def selectLot():
+        if flg_lot:
+            lot_num = st.text_input("ロット番号")
+            if hankaku(lot_num): st.error('ロット番号は半角で入力してください')
+        else:
+            st.selectbox('ロット番号',('T-442251-1-3','T-642584-2-3'))
 
-    selectLot(st.checkbox('新規ロット番号',on_change=selectLot))
+    st.checkbox('新規ロット番号',on_change=selectLot)
 
     col1, col2 = st.columns(2)
     with col1:
